@@ -12,26 +12,42 @@
 
 <a class="skip-link screen-reader-text" href="#content">Zum Inhalt springen</a>
 
+<?php
+// Get global settings from ACF
+$topbar_text = ep_get_option( 'topbar_text', '🕜 Rund um die Uhr erreichbar 24/7 | Notdienst verfügbar! 🚨' );
+$phone_number = ep_get_option( 'phone_number', '0157 77406869' );
+$phone_link = ep_get_option( 'phone_link', '+4915777406869' );
+$logo_image = ep_get_option( 'logo_image' );
+
+// Fallback logo
+$logo_url = get_template_directory_uri() . '/assets/img/cropped-elektro-pohl.png';
+$logo_alt = 'Elektriker Pohl Logo';
+if ( ! empty( $logo_image ) && is_array( $logo_image ) ) {
+    $logo_url = $logo_image['url'];
+    $logo_alt = ! empty( $logo_image['alt'] ) ? $logo_image['alt'] : 'Logo';
+}
+?>
+
 <header class="site-header">
     <!-- Header Top Bar -->
     <div class="header-top">
-        <span>🕜 Rund um die Uhr erreichbar 24/7 | Notdienst verfügbar! 🚨</span>
+        <span><?php echo esc_html( $topbar_text ); ?></span>
     </div>
     
     <!-- Header Main -->
     <div class="header-main">
         <div class="site-logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cropped-elektro-pohl.png" alt="Elektriker Pohl Logo" width="1585" height="411">
+                <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( $logo_alt ); ?>" width="1585" height="411">
             </a>
         </div>
         
         <div class="header-button">
-            <a href="tel:+4915777406869">
+            <a href="tel:<?php echo esc_attr( $phone_link ); ?>">
                 <svg aria-hidden="true" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                     <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
                 </svg>
-                <span>0157 77406869</span>
+                <span><?php echo esc_html( $phone_number ); ?></span>
             </a>
         </div>
     </div>

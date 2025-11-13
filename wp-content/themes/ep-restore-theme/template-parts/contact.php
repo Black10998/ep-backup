@@ -1,12 +1,20 @@
+<?php
+// Get contact section fields
+$contact_heading = ep_get_field( 'contact_heading', get_the_ID(), 'Jetzt Kontakt aufnehmen' );
+$contact_intro = ep_get_field( 'contact_intro', get_the_ID(), 'Ob akuter Notfall oder kurze Rückfrage – wir sind für Sie da. Einfach Formular ausfüllen oder direkt anrufen.' );
+$contact_form_heading = ep_get_field( 'contact_form_heading', get_the_ID(), 'Kontaktformular' );
+$phone_link = ep_get_option( 'phone_link', '+4915777406869' );
+?>
+
 <!-- Contact Section -->
 <section class="contact-section" id="kontakt">
     <div class="container">
         <div class="contact-content">
             <div class="contact-info">
-                <h2>Jetzt Kontakt aufnehmen</h2>
-                <p>Ob akuter Notfall oder kurze Rückfrage – wir sind für Sie da. Einfach Formular ausfüllen oder direkt anrufen.</p>
+                <h2><?php echo esc_html( $contact_heading ); ?></h2>
+                <p><?php echo esc_html( $contact_intro ); ?></p>
                 
-                <a href="tel:+4915777406869" class="cta-button">
+                <a href="tel:<?php echo esc_attr( $phone_link ); ?>" class="cta-button">
                     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path></svg>
                     <span>Jetzt Anrufen</span>
                 </a>
@@ -15,7 +23,7 @@
             </div>
             
             <div class="contact-form">
-                <h2>Kontaktformular</h2>
+                <h2><?php echo esc_html( $contact_form_heading ); ?></h2>
                 
                 <form method="post" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>">
                     <input type="hidden" name="action" value="contact_form_submission">

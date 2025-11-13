@@ -39,6 +39,51 @@ function ep_restore_theme_setup() {
 add_action( 'after_setup_theme', 'ep_restore_theme_setup' );
 
 /**
+ * ACF Options Page Setup
+ */
+function ep_restore_acf_options_page() {
+    // Check if ACF function exists
+    if ( function_exists( 'acf_add_options_page' ) ) {
+        
+        // Add main options page
+        acf_add_options_page( array(
+            'page_title'  => __( 'EP Theme Settings', 'ep-restore-theme' ),
+            'menu_title'  => __( 'EP Theme Settings', 'ep-restore-theme' ),
+            'menu_slug'   => 'ep-theme-settings',
+            'capability'  => 'edit_theme_options',
+            'parent_slug' => 'themes.php',
+            'icon_url'    => 'dashicons-admin-generic',
+            'redirect'    => false,
+            'position'    => 61,
+        ) );
+        
+    }
+}
+add_action( 'acf/init', 'ep_restore_acf_options_page' );
+
+/**
+ * Helper function to get ACF field with fallback
+ */
+function ep_get_field( $selector, $post_id = false, $fallback = '' ) {
+    if ( function_exists( 'get_field' ) ) {
+        $value = get_field( $selector, $post_id );
+        return ! empty( $value ) ? $value : $fallback;
+    }
+    return $fallback;
+}
+
+/**
+ * Helper function to get ACF option with fallback
+ */
+function ep_get_option( $selector, $fallback = '' ) {
+    if ( function_exists( 'get_field' ) ) {
+        $value = get_field( $selector, 'option' );
+        return ! empty( $value ) ? $value : $fallback;
+    }
+    return $fallback;
+}
+
+/**
  * Enqueue Styles and Scripts
  */
 function ep_restore_theme_enqueue_assets() {

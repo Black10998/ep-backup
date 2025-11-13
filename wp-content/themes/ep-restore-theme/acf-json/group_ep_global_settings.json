@@ -1,0 +1,97 @@
+{
+    "key": "group_ep_global_settings",
+    "title": "EP Global Settings",
+    "fields": [
+        {
+            "key": "field_company_name",
+            "label": "Company Name",
+            "name": "company_name",
+            "type": "text",
+            "instructions": "The company name displayed throughout the site",
+            "required": 0,
+            "default_value": "Elektriker Pohl",
+            "placeholder": "Elektriker Pohl"
+        },
+        {
+            "key": "field_phone_number",
+            "label": "Phone Number",
+            "name": "phone_number",
+            "type": "text",
+            "instructions": "Main phone number (format: 0157 77406869)",
+            "required": 0,
+            "default_value": "0157 77406869",
+            "placeholder": "0157 77406869"
+        },
+        {
+            "key": "field_phone_link",
+            "label": "Phone Link",
+            "name": "phone_link",
+            "type": "text",
+            "instructions": "Phone number for tel: link (format: +4915777406869)",
+            "required": 0,
+            "default_value": "+4915777406869",
+            "placeholder": "+4915777406869"
+        },
+        {
+            "key": "field_topbar_text",
+            "label": "Topbar Text",
+            "name": "topbar_text",
+            "type": "text",
+            "instructions": "Text displayed in the top bar",
+            "required": 0,
+            "default_value": "🕜 Rund um die Uhr erreichbar 24/7 | Notdienst verfügbar! 🚨",
+            "placeholder": "🕜 Rund um die Uhr erreichbar 24/7 | Notdienst verfügbar! 🚨"
+        },
+        {
+            "key": "field_logo_image",
+            "label": "Logo Image",
+            "name": "logo_image",
+            "type": "image",
+            "instructions": "Upload the company logo",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_footer_copyright",
+            "label": "Footer Copyright Text",
+            "name": "footer_copyright",
+            "type": "text",
+            "instructions": "Copyright text in footer",
+            "required": 0,
+            "default_value": "© 2025 ELEKTRIKER-POHL.DE | Alle Rechte vorbehalten",
+            "placeholder": "© 2025 ELEKTRIKER-POHL.DE | Alle Rechte vorbehalten"
+        },
+        {
+            "key": "field_impressum_url",
+            "label": "Impressum URL",
+            "name": "impressum_url",
+            "type": "page_link",
+            "instructions": "Select the Impressum page",
+            "required": 0
+        },
+        {
+            "key": "field_datenschutz_url",
+            "label": "Datenschutz URL",
+            "name": "datenschutz_url",
+            "type": "page_link",
+            "instructions": "Select the Datenschutz page",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "ep-theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}
