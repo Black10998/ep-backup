@@ -1,0 +1,26 @@
+EP Restore Theme PRO
+Version: 3.0.0
+Release Date: 2025-11-13
+Author: ELEKTRO RECHBERGER GmbH
+Author URI: https://elektro-rechberger.at
+GitHub: https://github.com/Black10998/ep-restore-theme-pro
+
+This is the PROFESSIONAL version of the EP Restore Theme.
+Fully dynamic, ACF-powered, with complete content control.
+
+Requirements:
+- WordPress 6.0+
+- PHP 7.4+
+- Advanced Custom Fields (free version)
+
+Features:
+- 6 ACF field groups with 30+ fields
+- WXR content import (3 German pages)
+- Options page for global settings
+- Repeater fields for flexible content
+- Fallback system (works without ACF)
+- 1:1 design fidelity from original backup
+- Complete German content
+
+For installation instructions, see README.md
+For version history, see CHANGELOG.md

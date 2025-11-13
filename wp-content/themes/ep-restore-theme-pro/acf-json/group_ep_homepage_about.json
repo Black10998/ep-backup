@@ -1,0 +1,68 @@
+{
+    "key": "group_ep_homepage_about",
+    "title": "Homepage - About Section",
+    "fields": [
+        {
+            "key": "field_about_heading",
+            "label": "About Heading",
+            "name": "about_heading",
+            "type": "text",
+            "required": 0,
+            "default_value": "Ihr Elektriker für alle Fälle"
+        },
+        {
+            "key": "field_about_text",
+            "label": "About Text",
+            "name": "about_text",
+            "type": "textarea",
+            "required": 0,
+            "default_value": "Als Fachbetrieb für Elektro- und Installationsarbeiten bieten wir zuverlässige Lösungen, faire Preise und kurzfristige Termine. Bei Stromausfall, defekter Steckdose oder Sicherungsausfall sind wir schnell vor Ort – dank 24/7-Notdienst auch an Wochenenden und Feiertagen."
+        },
+        {
+            "key": "field_about_image",
+            "label": "About Image",
+            "name": "about_image",
+            "type": "image",
+            "instructions": "Image for about section",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_about_features",
+            "label": "About Features",
+            "name": "about_features",
+            "type": "repeater",
+            "instructions": "Feature list for about section",
+            "required": 0,
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Feature",
+            "sub_fields": [
+                {
+                    "key": "field_about_feature_text",
+                    "label": "Feature Text",
+                    "name": "feature_text",
+                    "type": "text",
+                    "required": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}

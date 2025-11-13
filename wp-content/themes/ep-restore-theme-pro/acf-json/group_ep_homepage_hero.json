@@ -1,0 +1,79 @@
+{
+    "key": "group_ep_homepage_hero",
+    "title": "Homepage - Hero Section",
+    "fields": [
+        {
+            "key": "field_hero_heading",
+            "label": "Hero Heading",
+            "name": "hero_heading",
+            "type": "text",
+            "instructions": "Main heading in hero section",
+            "required": 0,
+            "default_value": "Ihr regionaler Fachbetrieb für<br><strong>Elektroinstallation & Elektrotechnik</strong>"
+        },
+        {
+            "key": "field_hero_subheading",
+            "label": "Hero Subheading",
+            "name": "hero_subheading",
+            "type": "text",
+            "instructions": "Subheading below main heading",
+            "required": 0,
+            "default_value": "Verlassen Sie sich auf schnellen Sofortservice, echte Handwerksqualität und garantierte Termine – rund um die Uhr, auch am Wochenende."
+        },
+        {
+            "key": "field_hero_intro",
+            "label": "Hero Intro Text",
+            "name": "hero_intro",
+            "type": "textarea",
+            "instructions": "Introduction paragraph",
+            "required": 0,
+            "default_value": "Als Fachbetrieb für Elektro- und Installationsarbeiten bieten wir zuverlässige Lösungen, faire Preise und kurzfristige Termine. Bei Stromausfall, defekter Steckdose oder Sicherungsausfall sind wir schnell vor Ort – dank 24/7-Notdienst auch an Wochenenden und Feiertagen."
+        },
+        {
+            "key": "field_hero_image",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "Main hero image",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_hero_features",
+            "label": "Hero Features",
+            "name": "hero_features",
+            "type": "repeater",
+            "instructions": "Feature list items (checkmarks)",
+            "required": 0,
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Feature",
+            "sub_fields": [
+                {
+                    "key": "field_feature_text",
+                    "label": "Feature Text",
+                    "name": "feature_text",
+                    "type": "text",
+                    "required": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}
