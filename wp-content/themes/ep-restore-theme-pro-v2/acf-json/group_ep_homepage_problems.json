@@ -1,0 +1,65 @@
+{
+    "key": "group_ep_homepage_problems",
+    "title": "Homepage - Problems Section",
+    "fields": [
+        {
+            "key": "field_problems_heading",
+            "label": "Problems Section Heading",
+            "name": "problems_heading",
+            "type": "text",
+            "required": 0,
+            "default_value": "Typische Probleme – und wie wir sie zuverlässig lösen"
+        },
+        {
+            "key": "field_problems_intro",
+            "label": "Problems Intro Text",
+            "name": "problems_intro",
+            "type": "textarea",
+            "required": 0,
+            "default_value": "Viele unserer Einsätze beginnen mit kleinen Alltagsproblemen, die schnell größer werden können. Als Fachbetrieb erkennen wir die Ursache, handeln schnell und sorgen dafür, dass das Problem nicht erneut auftritt. Hier sind fünf typische Fälle aus der Praxis – und was wir konkret tun:"
+        },
+        {
+            "key": "field_problems_list",
+            "label": "Problems List",
+            "name": "problems_list",
+            "type": "repeater",
+            "instructions": "List of problems and solutions",
+            "required": 0,
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Problem",
+            "sub_fields": [
+                {
+                    "key": "field_problem_title",
+                    "label": "Problem Title",
+                    "name": "problem_title",
+                    "type": "text",
+                    "required": 0
+                },
+                {
+                    "key": "field_problem_text",
+                    "label": "Problem Solution Text",
+                    "name": "problem_text",
+                    "type": "textarea",
+                    "required": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+}
