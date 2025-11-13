@@ -1,12 +1,12 @@
 <?php
-// Get services section fields
-$service_1_title = ep_get_field( 'service_1_title', get_the_ID(), 'Schnelle Hilfe im Notfall' );
-$service_1_text = ep_get_field( 'service_1_text', get_the_ID(), 'Unser 24/7-Notdienst ist rund um die Uhr für Sie da – auch an Wochenenden und Feiertagen. Bei Stromausfall oder defekten Anlagen sind wir schnell vor Ort.' );
-$service_2_title = ep_get_field( 'service_2_title', get_the_ID(), 'Fachgerechte Installation' );
-$service_2_text = ep_get_field( 'service_2_text', get_the_ID(), 'Von der Neuinstallation bis zur Modernisierung – wir setzen alle Elektroarbeiten sauber, sicher und nach aktuellen Normen um.' );
-$service_3_title = ep_get_field( 'service_3_title', get_the_ID(), 'Garantierte Termine' );
-$service_3_text = ep_get_field( 'service_3_text', get_the_ID(), 'Wir halten, was wir versprechen: Pünktliche Anfahrt, transparente Preise und zuverlässige Abwicklung – ohne versteckte Kosten.' );
-$phone_link = ep_get_option( 'phone_link', '+4915777406869' );
+// Get services section fields from Customizer
+$service_1_title = get_theme_mod( 'ep_service1_title', 'Schnelle Hilfe im Notfall' );
+$service_1_text = get_theme_mod( 'ep_service1_text', 'Unser 24/7-Notdienst ist rund um die Uhr für Sie da – auch an Wochenenden und Feiertagen. Bei Stromausfall oder defekten Anlagen sind wir schnell vor Ort.' );
+$service_2_title = get_theme_mod( 'ep_service2_title', 'Fachgerechte Installation' );
+$service_2_text = get_theme_mod( 'ep_service2_text', 'Von der Neuinstallation bis zur Modernisierung – wir setzen alle Elektroarbeiten sauber, sicher und nach aktuellen Normen um.' );
+$service_3_title = get_theme_mod( 'ep_service3_title', 'Garantierte Termine' );
+$service_3_text = get_theme_mod( 'ep_service3_text', 'Wir halten, was wir versprechen: Pünktliche Anfahrt, transparente Preise und zuverlässige Abwicklung – ohne versteckte Kosten.' );
+$phone_link = get_theme_mod( 'ep_phone_link', '+4368110596106' );
 ?>
 
 <!-- Services Section -->

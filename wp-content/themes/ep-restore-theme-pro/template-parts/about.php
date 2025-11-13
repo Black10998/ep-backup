@@ -1,10 +1,9 @@
 <?php
-// Get about section fields
-$about_heading = ep_get_field( 'about_heading', get_the_ID(), 'Ihr Elektriker für alle Fälle' );
-$about_text = ep_get_field( 'about_text', get_the_ID(), 'Als Fachbetrieb für Elektro- und Installationsarbeiten bieten wir zuverlässige Lösungen, faire Preise und kurzfristige Termine. Bei Stromausfall, defekter Steckdose oder Sicherungsausfall sind wir schnell vor Ort – dank 24/7-Notdienst auch an Wochenenden und Feiertagen.' );
-$about_image = ep_get_field( 'about_image', get_the_ID() );
-$about_features = ep_get_field( 'about_features', get_the_ID() );
-$phone_link = ep_get_option( 'phone_link', '+4915777406869' );
+// Get about section fields from Customizer
+$about_heading = get_theme_mod( 'ep_about_heading', 'Ihr Elektriker für alle Fälle' );
+$about_text = get_theme_mod( 'ep_about_text', 'Als Fachbetrieb für Elektro- und Installationsarbeiten bieten wir zuverlässige Lösungen, faire Preise und kurzfristige Termine. Bei Stromausfall, defekter Steckdose oder Sicherungsausfall sind wir schnell vor Ort – dank 24/7-Notdienst auch an Wochenenden und Feiertagen.' );
+$about_image_id = get_theme_mod( 'ep_about_image' );
+$phone_link = get_theme_mod( 'ep_phone_link', '+4368110596106' );
 
 // Default features
 $default_about_features = array(
@@ -28,20 +27,8 @@ $default_about_features = array(
                 
                 <div class="hero-features">
                     <?php
-                    // Use ACF repeater if available, otherwise use defaults
-                    $features_to_display = array();
-                    if ( ! empty( $about_features ) && is_array( $about_features ) ) {
-                        foreach ( $about_features as $feature ) {
-                            if ( ! empty( $feature['feature_text'] ) ) {
-                                $features_to_display[] = $feature['feature_text'];
-                            }
-                        }
-                    }
-                    
-                    // If no ACF features, use defaults
-                    if ( empty( $features_to_display ) ) {
-                        $features_to_display = $default_about_features;
-                    }
+                    // Use default features
+                    $features_to_display = $default_about_features;
                     
                     // Split into two columns
                     $half = ceil( count( $features_to_display ) / 2 );
@@ -79,9 +66,16 @@ $default_about_features = array(
                 // About image
                 $about_img_url = get_template_directory_uri() . '/assets/img/21391b07-45f9-4235-9d2b-865be5c0dc86.png';
                 $about_img_alt = 'Elektriker Werkzeug';
-                if ( ! empty( $about_image ) && is_array( $about_image ) ) {
-                    $about_img_url = $about_image['url'];
-                    $about_img_alt = ! empty( $about_image['alt'] ) ? $about_image['alt'] : 'About Image';
+                
+                if ( ! empty( $about_image_id ) ) {
+                    $about_image = wp_get_attachment_image_src( $about_image_id, 'full' );
+                    if ( $about_image ) {
+                        $about_img_url = $about_image[0];
+                        $about_img_alt_text = get_post_meta( $about_image_id, '_wp_attachment_image_alt', true );
+                        if ( ! empty( $about_img_alt_text ) ) {
+                            $about_img_alt = $about_img_alt_text;
+                        }
+                    }
                 }
                 ?>
                 <img src="<?php echo esc_url( $about_img_url ); ?>" alt="<?php echo esc_attr( $about_img_alt ); ?>" width="800" height="800">

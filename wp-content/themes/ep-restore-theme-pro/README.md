@@ -2,19 +2,19 @@
 
 ## Beschreibung
 
-Dies ist die **PROFESSIONAL VERSION** - eine vollständig **dynamische, ACF-gesteuerte** 1:1 Wiederherstellung des Elektriker Pohl Designs aus dem Website-Backup. Das Theme wurde vollständig in deutschem Text erstellt und behält alle ursprünglichen Design-Elemente, Layouts und Inhalte bei.
+Dies ist die **PROFESSIONAL VERSION** - eine vollständig **dynamische, Customizer-gesteuerte** WordPress-Theme für Elektrofachbetriebe. Das Theme wurde vollständig in deutschem Text erstellt und bietet professionelle Design-Elemente, Layouts und Inhalte für österreichische Elektrobetriebe.
 
 **Version 3.0.0 - PRO Edition:**
-- ✅ Vollständig dynamisch mit Advanced Custom Fields (ACF)
+- ✅ Vollständig dynamisch mit WordPress Customizer
 - ✅ Alle Texte und Bilder über WordPress-Admin editierbar
-- ✅ ACF Options Page für globale Einstellungen
-- ✅ Repeater-Felder für flexible Inhalte
-- ✅ Fallback-Werte aus dem Original-Backup
+- ✅ Customizer Panel für globale Einstellungen
+- ✅ Keine ACF PRO erforderlich - funktioniert mit Customizer
 - ✅ Content-Import via WXR-Datei
 - ✅ Professionelle Theme-Struktur
-- ✅ Optimiert für Produktionsumgebungen
+- ✅ Optimiert für österreichische Elektrobetriebe
 - ✅ Vollständige Dokumentation
 - ✅ Unabhängiges, eigenständiges Theme
+- ✅ Kontakt: elektro.rechberger@gmx.at | Tel: 0681 10596106
 
 ## Theme-Struktur
 
@@ -58,7 +58,7 @@ Dies ist die **PROFESSIONAL VERSION** - eine vollständig **dynamische, ACF-gest
 
 ### Funktionalität
 - ✅ Kontaktformular mit E-Mail-Versand
-- ✅ Telefon-Links (tel:+4915777406869)
+- ✅ Telefon-Links (tel:+4368110596106)
 - ✅ Smooth Scrolling zu Ankern
 - ✅ Formular-Validierung
 - ✅ WordPress-Standard-Features (Custom Logo, Menüs, etc.)
@@ -68,7 +68,7 @@ Dies ist die **PROFESSIONAL VERSION** - eine vollständig **dynamische, ACF-gest
 ### Voraussetzungen
 - WordPress 6.0 oder höher (getestet bis 6.8)
 - PHP 7.4 oder höher
-- **Advanced Custom Fields (ACF) Plugin** (kostenlose Version ausreichend)
+- **Keine zusätzlichen Plugins erforderlich** - Theme nutzt WordPress Customizer
 
 ### Theme-Informationen
 - **Theme Name:** EP Restore Theme PRO
@@ -76,6 +76,9 @@ Dies ist die **PROFESSIONAL VERSION** - eine vollständig **dynamische, ACF-gest
 - **Author:** ELEKTRO RECHBERGER GmbH
 - **Author URI:** https://elektro-rechberger.at
 - **Text Domain:** ep-restore-theme-pro
+- **Kontakt:** elektro.rechberger@gmx.at
+- **Telefon:** 0681 10596106
+- **Region:** Österreich
 
 ### Schritt-für-Schritt Anleitung
 
@@ -85,10 +88,10 @@ Verwenden Sie LocalWP, XAMPP, MAMP oder eine andere lokale WordPress-Umgebung:
 - Erstellen Sie eine neue WordPress-Site
 - Notieren Sie sich die Admin-Zugangsdaten
 
-#### 2. ACF Plugin installieren
-1. Gehen Sie zu **Plugins → Installieren**
-2. Suchen Sie nach "Advanced Custom Fields"
-3. Installieren und aktivieren Sie das Plugin (kostenlose Version)
+#### 2. Theme-Einstellungen konfigurieren
+1. Gehen Sie zu **Design → Customizer**
+2. Öffnen Sie das Panel "EP Restore Theme PRO"
+3. Passen Sie globale Einstellungen an (Firma, Telefon, E-Mail, Logo)
 
 #### 3. Theme hochladen und aktivieren
 1. Laden Sie den Ordner `ep-restore-theme-pro` in `wp-content/themes/` hoch
@@ -111,67 +114,60 @@ Verwenden Sie LocalWP, XAMPP, MAMP oder eine andere lokale WordPress-Umgebung:
 3. Wählen Sie "Startseite" als Homepage
 4. Speichern Sie die Änderungen
 
-#### 6. ACF-Felder werden automatisch geladen
-Die ACF-Feldgruppen werden automatisch aus dem `acf-json` Ordner geladen.
-Sie sollten jetzt folgende Feldgruppen sehen:
-- EP Global Settings (Options Page)
-- Homepage - Hero Section
-- Homepage - Services Section
-- Homepage - About Section
-- Homepage - Contact Section
-- Homepage - Problems Section
+#### 6. Customizer-Einstellungen anpassen
+Gehen Sie zu **Design → Customizer → EP Restore Theme PRO**
+Sie finden folgende Bereiche:
+- Global Settings (Firma, Telefon, E-Mail, Logo)
+- Homepage – Hero (Hauptüberschrift, Texte)
+- Homepage – Services (3 Service-Boxen)
+- Homepage – About (Über-uns-Bereich)
+- Homepage – Contact (Kontakt-Bereich)
+- Homepage – Problems (Probleme-Bereich)
 
-#### 7. Inhalte anpassen (optional)
-1. Gehen Sie zu **Design → EP Theme Settings** für globale Einstellungen
-2. Bearbeiten Sie die Startseite unter **Seiten → Startseite** für seitenspezifische Inhalte
+#### 7. Inhalte anpassen
+1. Gehen Sie zu **Design → Customizer → EP Restore Theme PRO**
+2. Passen Sie alle Texte, Bilder und Einstellungen an
+3. Klicken Sie auf "Veröffentlichen" um Änderungen zu speichern
 
 ## Inhalte bearbeiten
 
 ### Globale Einstellungen (Header, Footer, etc.)
-1. Gehen Sie zu **Design → EP Theme Settings**
+1. Gehen Sie zu **Design → Customizer → EP Restore Theme PRO → Global Settings**
 2. Hier können Sie bearbeiten:
-   - **Company Name:** Firmenname
-   - **Phone Number:** Telefonnummer (Anzeige)
-   - **Phone Link:** Telefonnummer für tel:-Links
-   - **Topbar Text:** Text in der oberen schwarzen Leiste
+   - **Company Name:** Firmenname (Standard: ELEKTRO RECHBERGER GmbH)
+   - **Phone Display:** Telefonnummer Anzeige (Standard: 0681 10596106)
+   - **Phone Link:** Telefonnummer für tel:-Links (Standard: +4368110596106)
+   - **Email Address:** E-Mail-Adresse (Standard: elektro.rechberger@gmx.at)
+   - **Topbar Text:** Text in der oberen Leiste
    - **Logo Image:** Firmenlogo hochladen
-   - **Footer Copyright Text:** Copyright-Text im Footer
-   - **Impressum URL:** Link zur Impressum-Seite
-   - **Datenschutz URL:** Link zur Datenschutz-Seite
 
 ### Homepage-Inhalte bearbeiten
-1. Gehen Sie zu **Seiten → Startseite → Bearbeiten**
-2. Scrollen Sie nach unten zu den ACF-Feldgruppen:
+1. Gehen Sie zu **Design → Customizer → EP Restore Theme PRO**
+2. Wählen Sie die gewünschte Sektion:
 
-#### Hero Section
+#### Hero Section (Homepage – Hero)
 - **Hero Heading:** Hauptüberschrift
 - **Hero Subheading:** Unterüberschrift
 - **Hero Intro Text:** Einleitungstext
-- **Hero Image:** Hauptbild hochladen
-- **Hero Features:** Feature-Liste (Repeater)
-  - Klicken Sie auf "Add Feature" um Punkte hinzuzufügen
 
-#### Services Section
-- **Service 1/2/3 Title:** Titel der Service-Boxen
-- **Service 1/2/3 Text:** Beschreibungstext
+#### Services Section (Homepage – Services)
+- **Service 1 Title / Text:** Erste Service-Box
+- **Service 2 Title / Text:** Zweite Service-Box
+- **Service 3 Title / Text:** Dritte Service-Box
 
-#### About Section
+#### About Section (Homepage – About)
 - **About Heading:** Überschrift
 - **About Text:** Beschreibungstext
 - **About Image:** Bild hochladen
-- **About Features:** Feature-Liste (Repeater)
 
-#### Contact Section
+#### Contact Section (Homepage – Contact)
 - **Contact Heading:** Überschrift
-- **Contact Intro Text:** Einleitungstext
+- **Contact Intro:** Einleitungstext
 - **Contact Form Heading:** Formular-Überschrift
 
-#### Problems Section
-- **Problems Section Heading:** Überschrift
-- **Problems Intro Text:** Einleitungstext
-- **Problems List:** Problem/Lösung-Liste (Repeater)
-  - **Problem Title:** Titel (z.B. "✅ Steckdose defekt")
-  - **Problem Solution Text:** Lösungsbeschreibung
+#### Problems Section (Homepage – Problems)
+- **Problems Heading:** Überschrift
+- **Problems Intro:** Einleitungstext
 
 ### Andere Seiten bearbeiten
 - **Impressum:** Gehen Sie zu **Seiten → Impressum**

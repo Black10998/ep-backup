@@ -1,14 +1,12 @@
 <?php 
 get_header(); 
 
-// Get hero section fields
-$hero_heading = ep_get_field( 'hero_heading', get_the_ID(), 'Ihr regionaler Fachbetrieb für<br><strong>Elektroinstallation &amp; Elektrotechnik</strong>' );
-$hero_subheading = ep_get_field( 'hero_subheading', get_the_ID(), 'Verlassen Sie sich auf schnellen Sofortservice, echte Handwerksqualität und garantierte Termine – rund um die Uhr, auch am Wochenende.' );
-$hero_intro = ep_get_field( 'hero_intro', get_the_ID(), 'Als Fachbetrieb für Elektro- und Installationsarbeiten bieten wir zuverlässige Lösungen, faire Preise und kurzfristige Termine. Bei Stromausfall, defekter Steckdose oder Sicherungsausfall sind wir schnell vor Ort – dank 24/7-Notdienst auch an Wochenenden und Feiertagen.' );
-$hero_image = ep_get_field( 'hero_image', get_the_ID() );
-$hero_features = ep_get_field( 'hero_features', get_the_ID() );
+// Get hero section fields from Customizer
+$hero_heading = get_theme_mod( 'ep_hero_heading', 'Ihr regionaler Fachbetrieb für<br><strong>Elektroinstallation &amp; Elektrotechnik</strong>' );
+$hero_subheading = get_theme_mod( 'ep_hero_subheading', 'Verlassen Sie sich auf schnellen Sofortservice, echte Handwerksqualität und garantierte Termine – rund um die Uhr, auch am Wochenende.' );
+$hero_intro = get_theme_mod( 'ep_hero_intro', 'Als Fachbetrieb für Elektro- und Installationsarbeiten bieten wir zuverlässige Lösungen, faire Preise und kurzfristige Termine. Bei Stromausfall, defekter Steckdose oder Sicherungsausfall sind wir schnell vor Ort – dank 24/7-Notdienst auch an Wochenenden und Feiertagen.' );
 
-// Default features if ACF not available
+// Default features
 $default_features = array(
     '24/7 Notdienst',
     'Elektroinstallation',
@@ -21,7 +19,7 @@ $default_features = array(
 );
 
 // Phone number for CTA
-$phone_link = ep_get_option( 'phone_link', '+4915777406869' );
+$phone_link = get_theme_mod( 'ep_phone_link', '+4368110596106' );
 ?>
 
 <!-- Hero Section -->
@@ -37,20 +35,8 @@ $phone_link = ep_get_option( 'phone_link', '+4915777406869' );
                 
                 <div class="hero-features">
                     <?php
-                    // Use ACF repeater if available, otherwise use defaults
-                    $features_to_display = array();
-                    if ( ! empty( $hero_features ) && is_array( $hero_features ) ) {
-                        foreach ( $hero_features as $feature ) {
-                            if ( ! empty( $feature['feature_text'] ) ) {
-                                $features_to_display[] = $feature['feature_text'];
-                            }
-                        }
-                    }
-                    
-                    // If no ACF features, use defaults
-                    if ( empty( $features_to_display ) ) {
-                        $features_to_display = $default_features;
-                    }
+                    // Use default features
+                    $features_to_display = $default_features;
                     
                     // Split into two columns
                     $half = ceil( count( $features_to_display ) / 2 );
@@ -84,16 +70,7 @@ $phone_link = ep_get_option( 'phone_link', '+4915777406869' );
             </div>
             
             <div class="hero-image">
-                <?php
-                // Hero image
-                $hero_img_url = get_template_directory_uri() . '/assets/img/950201d8-368a-4744-8e05-e305a7a9453a-1024x683.png';
-                $hero_img_alt = 'Elektriker bei der Arbeit';
-                if ( ! empty( $hero_image ) && is_array( $hero_image ) ) {
-                    $hero_img_url = $hero_image['url'];
-                    $hero_img_alt = ! empty( $hero_image['alt'] ) ? $hero_image['alt'] : 'Hero Image';
-                }
-                ?>
-                <img src="<?php echo esc_url( $hero_img_url ); ?>" alt="<?php echo esc_attr( $hero_img_alt ); ?>" width="800" height="534">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/950201d8-368a-4744-8e05-e305a7a9453a-1024x683.png" alt="Elektriker bei der Arbeit" width="800" height="534">
             </div>
         </div>
     </div>

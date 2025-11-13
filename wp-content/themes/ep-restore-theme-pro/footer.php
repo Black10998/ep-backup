@@ -1,18 +1,25 @@
 </main><!-- .site-main -->
 
 <?php
-// Get global settings from ACF
-$logo_image = ep_get_option( 'logo_image' );
-$footer_copyright = ep_get_option( 'footer_copyright', '© 2025 ELEKTRIKER-POHL.DE | Alle Rechte vorbehalten' );
-$impressum_url = ep_get_option( 'impressum_url', home_url( '/impressum/' ) );
-$datenschutz_url = ep_get_option( 'datenschutz_url', home_url( '/datenschutz/' ) );
+// Get global settings from Customizer
+$logo_id = get_theme_mod( 'ep_logo_image' );
+$company_name = get_theme_mod( 'ep_company_name', 'ELEKTRO RECHBERGER GmbH' );
+$impressum_url = home_url( '/impressum/' );
+$datenschutz_url = home_url( '/datenschutz/' );
 
-// Fallback logo
+// Logo handling
 $logo_url = get_template_directory_uri() . '/assets/img/cropped-elektro-pohl.png';
-$logo_alt = 'Elektriker Pohl Logo';
-if ( ! empty( $logo_image ) && is_array( $logo_image ) ) {
-    $logo_url = $logo_image['url'];
-    $logo_alt = ! empty( $logo_image['alt'] ) ? $logo_image['alt'] : 'Logo';
+$logo_alt = $company_name;
+
+if ( ! empty( $logo_id ) ) {
+    $logo_image = wp_get_attachment_image_src( $logo_id, 'full' );
+    if ( $logo_image ) {
+        $logo_url = $logo_image[0];
+        $logo_alt_text = get_post_meta( $logo_id, '_wp_attachment_image_alt', true );
+        if ( ! empty( $logo_alt_text ) ) {
+            $logo_alt = $logo_alt_text;
+        }
+    }
 }
 ?>
 
@@ -33,7 +40,7 @@ if ( ! empty( $logo_image ) && is_array( $logo_image ) ) {
             </nav>
             
             <div class="footer-copyright">
-                <span><?php echo esc_html( $footer_copyright ); ?></span>
+                <span>© <?php echo date('Y'); ?> <?php echo esc_html( $company_name ); ?> | Alle Rechte vorbehalten</span>
             </div>
         </div>
     </div>
@@ -41,7 +48,7 @@ if ( ! empty( $logo_image ) && is_array( $logo_image ) ) {
 
 <!-- Mobile Sticky Buttons (visible only on mobile/tablet) -->
 <?php
-$phone_link = ep_get_option( 'phone_link', '+4915777406869' );
+$phone_link = get_theme_mod( 'ep_phone_link', '+4368110596106' );
 ?>
 <div class="mobile-sticky-buttons hidden-desktop">
     <div class="button-group">

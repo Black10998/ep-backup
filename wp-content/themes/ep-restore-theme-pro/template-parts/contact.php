@@ -1,9 +1,9 @@
 <?php
-// Get contact section fields
-$contact_heading = ep_get_field( 'contact_heading', get_the_ID(), 'Jetzt Kontakt aufnehmen' );
-$contact_intro = ep_get_field( 'contact_intro', get_the_ID(), 'Ob akuter Notfall oder kurze Rückfrage – wir sind für Sie da. Einfach Formular ausfüllen oder direkt anrufen.' );
-$contact_form_heading = ep_get_field( 'contact_form_heading', get_the_ID(), 'Kontaktformular' );
-$phone_link = ep_get_option( 'phone_link', '+4915777406869' );
+// Get contact section fields from Customizer
+$contact_heading = get_theme_mod( 'ep_contact_heading', 'Jetzt Kontakt aufnehmen' );
+$contact_intro = get_theme_mod( 'ep_contact_intro', 'Ob akuter Notfall oder kurze Rückfrage – wir sind für Sie da. Einfach Formular ausfüllen oder direkt anrufen.' );
+$contact_form_heading = get_theme_mod( 'ep_contact_form_heading', 'Kontaktformular' );
+$phone_link = get_theme_mod( 'ep_phone_link', '+4368110596106' );
 ?>
 
 <!-- Contact Section -->

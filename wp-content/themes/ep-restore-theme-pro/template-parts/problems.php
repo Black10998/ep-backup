@@ -1,8 +1,7 @@
 <?php
-// Get problems section fields
-$problems_heading = ep_get_field( 'problems_heading', get_the_ID(), 'Typische Probleme – und wie wir sie zuverlässig lösen' );
-$problems_intro = ep_get_field( 'problems_intro', get_the_ID(), 'Viele unserer Einsätze beginnen mit kleinen Alltagsproblemen, die schnell größer werden können. Als Fachbetrieb erkennen wir die Ursache, handeln schnell und sorgen dafür, dass das Problem nicht erneut auftritt. Hier sind fünf typische Fälle aus der Praxis – und was wir konkret tun:' );
-$problems_list = ep_get_field( 'problems_list', get_the_ID() );
+// Get problems section fields from Customizer
+$problems_heading = get_theme_mod( 'ep_problems_heading', 'Typische Probleme – und wie wir sie zuverlässig lösen' );
+$problems_intro = get_theme_mod( 'ep_problems_intro', 'Viele unserer Einsätze beginnen mit kleinen Alltagsproblemen, die schnell größer werden können. Als Fachbetrieb erkennen wir die Ursache, handeln schnell und sorgen dafür, dass das Problem nicht erneut auftritt.' );
 
 // Default problems if ACF not available
 $default_problems = array(
@@ -40,23 +39,8 @@ $default_problems = array(
     )
 );
 
-// Use ACF problems if available, otherwise use defaults
-$problems_to_display = array();
-if ( ! empty( $problems_list ) && is_array( $problems_list ) ) {
-    foreach ( $problems_list as $problem ) {
-        if ( ! empty( $problem['problem_title'] ) ) {
-            $problems_to_display[] = array(
-                'title' => $problem['problem_title'],
-                'text' => ! empty( $problem['problem_text'] ) ? $problem['problem_text'] : ''
-            );
-        }
-    }
-}
-
-// If no ACF problems, use defaults
-if ( empty( $problems_to_display ) ) {
-    $problems_to_display = $default_problems;
-}
+// Use default problems
+$problems_to_display = $default_problems;
 
 // Split into two columns
 $half = ceil( count( $problems_to_display ) / 2 );

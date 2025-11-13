@@ -14,6 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'EP_RESTORE_PRO_VERSION', '3.0.0' );
 
 /**
+ * Load Customizer Integration
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
  * Theme Setup
  */
 function ep_restore_theme_setup() {
